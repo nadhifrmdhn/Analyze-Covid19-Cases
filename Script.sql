@@ -4,11 +4,11 @@ WHERE country = "Indonesia"
 GROUP BY country, province_state;
 
 SELECT 
-	*, 
-	SUM(confirmed_day) OVER(
-	PARTITION BY country, province_state
-	ORDER BY date
-	) AS running_total
+  *, 
+  SUM(confirmed_day) OVER(
+  PARTITION BY country, province_state
+  ORDER BY date
+  ) AS running_total
 FROM Covid19.confirmed_covid2
 WHERE country = "Indonesia";
 
